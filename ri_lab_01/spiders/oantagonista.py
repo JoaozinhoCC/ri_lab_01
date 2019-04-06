@@ -9,15 +9,16 @@ from ri_lab_01.items import RiLab01CommentItem
 class OantagonistaSpider(scrapy.Spider):
     name = 'oantagonista'
     start_urls = ['https://www.oantagonista.com/']
+    # O construtor foi removido por estar ocasioando erro na chamada do json
 
-    def parse(self, response):
+    def parse(self, response): # funcao criada para pegar links da barra menu
         links = response.xpath('//ul//li//a[re:test(@href, "https://www.oantagonista.com/assuntos/")]/@href').getall()
         for link in links:
             yield scrapy.Request(
             response.urljoin(link),
             callback = self.parse_category
             )
-    def parse_category(self,response):
+    def parse_category(self,response): # pegando links das noticias
 
         news = response.css('a.article_link::attr(href)').getall()
         for new in news:
@@ -25,7 +26,7 @@ class OantagonistaSpider(scrapy.Spider):
             response.urljoin(new),
             callback=self.parse_new
             )
-    def parse_new(self, response):
+    def parse_new(self, response): # entrando no link da noticia e salvando no arquivo csv
         title = response.css('article h1::text').get()
         date = response.css('article time::text').get()
         text = response.css('article p::text').get()
@@ -39,3 +40,4 @@ class OantagonistaSpider(scrapy.Spider):
         'category' : category,
         'url' : response.url
         }
+
