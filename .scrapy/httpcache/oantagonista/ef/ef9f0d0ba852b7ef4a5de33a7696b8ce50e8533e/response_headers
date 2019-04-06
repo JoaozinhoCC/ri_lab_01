@@ -1,0 +1,16 @@
+Date: Sat, 06 Apr 2019 02:35:43 GMT
+Content-Type: text/html; charset=UTF-8
+Link: <https://www.oantagonista.com/atsinogatna/>; rel="https://api.w.org/"
+Vary: Accept-Encoding
+X-Cacheable: YES
+Cache-Control: public, max-age=240
+X-Varnish: 1137355396 1137354442
+Age: 22
+Via: 1.1 varnish
+X-Cache-Action: HIT
+X-Cache-Hits: 55
+X-Cache-Vs: 2
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+Cf-Ray: 4c305ebcfe6bd00e-GRU
+Content-Encoding: gzip
