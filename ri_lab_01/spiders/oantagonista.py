@@ -8,7 +8,7 @@ from ri_lab_01.items import RiLab01CommentItem
 
 class OantagonistaSpider(scrapy.Spider):
     name = 'oantagonista'
-    start_urls = ['https://www.oantagonista.com/pagina/15/']
+    start_urls = ['https://www.oantagonista.com/']
 
     def parse(self, response):
         links = response.xpath('//ul//li//a[re:test(@href, "https://www.oantagonista.com/assuntos/")]/@href').getall()
